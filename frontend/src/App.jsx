@@ -8,13 +8,13 @@ function App() {
     const [course, setCourse] = useState("");
 
     const getStudents = async () => {
-        const response = await fetch("http://localhost:5500/students");
+        const response = await fetch("/students");
         const data = await response.json();
         setStudents(data);
     };
 
     const addStudent = async () => {
-        await fetch("http://localhost:5500/students", {
+        await fetch("/students", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -28,7 +28,7 @@ function App() {
     };
 
     const deleteStudent = async (id) => {
-        await fetch(`http://localhost:5500/students/${id}`, {
+        await fetch(`/students/${id}`, {
             method: "DELETE"
         });
 

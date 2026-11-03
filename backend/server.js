@@ -42,6 +42,6 @@ app.delete("/students/:id", (req, res) => {
     );
 });
 
-app.listen(5500, () => {
+app.listen(5500, "0.0.0.0", () => {
     console.log("Backend running on port 5500");
 });
